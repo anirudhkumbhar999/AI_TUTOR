@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Teach from './pages/Teach';
-import Syllabus from './pages/Syllabus';
 import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import Syllabus from './pages/Syllabus';
+import Teach from './pages/Teach';
 
 function App() {
   return (
@@ -10,8 +10,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/syllabus/:subjectId" element={<Syllabus />} />
         <Route path="/teach" element={<Teach />} />
-        <Route path="/syllabus" element={<Syllabus />} />
       </Routes>
     </Router>
   );

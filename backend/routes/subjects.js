@@ -3,9 +3,11 @@ const router = express.Router();
 const {
   createSubject,
   addSyllabusSection,
-  getSubjectSyllabus
+  getSubjectSyllabus,
+  getAllSubjects
 } = require('../controllers/subjectController');
 
+router.get('/', getAllSubjects);
 // Create subject
 router.post('/create', createSubject);
 
