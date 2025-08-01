@@ -1,9 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-// @route GET /api/prompts/:topic
-router.get('/:topic', (req, res) => {
-  res.send(`Fetch prompt for topic: ${req.params.topic}`);
-});
+const {
+  createPrompt,
+  getPromptBySection
+} = require('../controllers/promptController');
+
+router.post('/', createPrompt);
+router.get('/:sectionId', getPromptBySection);
 
 module.exports = router;

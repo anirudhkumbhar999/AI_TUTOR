@@ -65,3 +65,16 @@ exports.getAllSubjects = async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch subjects' });
   }
 };
+
+exports.getSyllabusSectionById = async (req, res) => {
+  try {
+    const section = await Syllabus.findById(req.params.sectionId);
+    if (!section) {
+      return res.status(404).json({ error: 'Syllabus section not found' });
+    }
+    res.json(section);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Server error' });
+  }
+};

@@ -4,7 +4,8 @@ const {
   createSubject,
   addSyllabusSection,
   getSubjectSyllabus,
-  getAllSubjects
+  getAllSubjects,
+  getSyllabusSectionById
 } = require('../controllers/subjectController');
 
 router.get('/', getAllSubjects);
@@ -16,5 +17,8 @@ router.post('/syllabus', addSyllabusSection);
 
 // Get syllabus for subject
 router.get('/:subjectId/syllabus', getSubjectSyllabus);
+
+router.get('/section/:sectionId', getSyllabusSectionById);
+
 
 module.exports = router;
