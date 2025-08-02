@@ -15,6 +15,7 @@ app.use('/api/chat', require('./routes/chat'));
 app.use('/api/code', require('./routes/code'));
 app.use('/api/subjects', require('./routes/subjects'));
 app.use('/api/syllabus', require('./routes/syllabus'));
+app.use("/api/leetcode",require("./routes/leetcode"));
 
 
 
